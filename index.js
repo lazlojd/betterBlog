@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 
 
 app.use(express.static(__dirname + '/public'));
-const port = process.env.port || 8080
+const port = process.env.port 
 
 var server = app.listen(port, () => {
 	console.log('Now listening to port ' + port);
