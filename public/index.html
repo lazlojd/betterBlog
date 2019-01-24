@@ -104,9 +104,42 @@
 			</div>
 		</div>
 	</header>
+	<style>
+	.sidebar-wrapper {
+		height: 100%;
+	  	width: 15%;
+	  	display: inline-block;
+	}
+	.sidebar-inner {
+	  transition: all linear 0.5s;
+	  background-color: lightblue;
+	  width: 100%;
+	  height: 100%;
+	  position: relative;
+	  top: 0;
+	  left: 0;
+	  
+	}
+
+	.ng-hide {
+
+	  width: 0;
+
+	  background-color: transparent;
+	  left: -200px;
+	}
+
+</style>
 	
 	<div id="gtco-main" ng-controller="BlogController">
-		<div class="container">
+		<h1>Hide the DIV: <input type="checkbox" ng-model="myCheck"></h1>
+
+		<div class="sidebar-wrapper"> 
+			<div ng-hide="myCheck" class="sidebar-inner">
+				<!-- side bar contents go here -->
+			</div>
+		</div>
+		<div class="container allow-sidebar" style="display:inline-block;">
 			<div class="row row-pb-md">
 				<div class="col-md-10">
 					<p><i>I built this blog interface to hopefully make it easier for you, the reader, to take note of any thoughts or feeling you have while reading a particular section. To do so, hover over the section and click the thought bubble next to a particular section to easily record your thoughts as you read through. In the end feel free to share them here for anyone to see or save them to your local machine for your own convenience.</i></p>
@@ -114,14 +147,13 @@
 					<div class="row row-pb-md" ng-mouseenter="makeVisible(0)" ng-mouseleave="makeInvisible(0)">	
 						<div class="col-md-11">
 							<p>I recently read this Wired article detailing some of the experiences of Tesla employees with Elon Musk as they struggled through their Tesla Model 3 production woes throughout 2017 and 2018. Several things stood out from this article (Musk’s firing rampages, the exodus of upper level management, etc.) but none more so than one inalienable fact: the drive with which the hardworking employees at Tesla are working to fulfill their mission to accelerate the world’s transition to sustainable energy. With this in mind, my passion for one of their flagship products, the Tesla Model S, was also reaffirmed. The model S is, to put it simply, a cool electric vehicle with incredible features that stands strong when compared to its alternatives and when assessing its faults. It’s a vehicle that takes my breath away. Continue reading to find out why!</p>
+							<p>Disclaimer: While I do not yet own this product (being in college hasn’t quite yielded the opportunity to acquire the $60k+ I need to purchase it) I fell in love with this product the first time I saw it and all the time I've been inside of one.</p>
 						</div>
 						<div class="col-md comment" id="p0"> 
 							<i class="icon-speech-bubble"></i>
 						</div>
 					</div>
 					<div class="row row-pb-md">
-
-					<p>Disclaimer: While I do not yet own this product (being in college hasn’t quite yielded the opportunity to acquire the $60k+ I need to purchase it) I fell in love with this product the first time I saw it and all the time I've been inside of one.</p>
 
 					<h3>What does the Model S achieve?</h3>
 
