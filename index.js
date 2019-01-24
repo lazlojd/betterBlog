@@ -11,11 +11,11 @@ app.use(bodyParser.json())
 
 // app.use(cors());
 // app.options('*', cors())
-
+ 
 
 
 app.use(express.static(__dirname + '/public'));
-const port = process.env.port || 8080
+const port = process.env.PORT || 8080
 
 var server = app.listen(port, () => {
 	console.log('Now listening to port ' + port);
