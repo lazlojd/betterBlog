@@ -13,6 +13,7 @@ app.use(bodyParser.json())
 // app.options('*', cors())
 
 
+
 app.use(express.static(__dirname + '/public'));
 const port = process.env.port || 8080
 
