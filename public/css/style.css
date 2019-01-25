@@ -2132,4 +2132,56 @@ figure figcaption {
   border-bottom-left-radius: 0px !important;
 }
 
+.carousel-control-prev-icon-edit,
+.carousel-control-next-icon-edit {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: none;
+}
+.tesla-value {
+  margin-left: 250px;
+}
+.carousel-control-next-icon-edit:after
+{
+  content: '>';
+  font-size: 55px;
+  color: red;
+}
+
+.carousel-control-prev-icon-edit:after {
+  content: '<';
+  font-size: 55px;
+  color: red;
+}
+#advance {
+    top: 41%;
+    left:90%;
+}
+
+@media screen and (max-width: 1200px) {
+  #advance {
+    top: 50%;
+    left: 65%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #advance {
+    top: 50%;
+    left: 90%;
+  }
+
+  @media screen and (max-width: 798px) {
+      #advance {
+      top: 50%;
+      left: 0;
+    }
+  }
+}
+
+
 /*# sourceMappingURL=style.css.map */
