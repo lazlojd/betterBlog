@@ -27,6 +27,9 @@
 	<meta name="twitter:card" content="" />
 
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i|Roboto+Mono" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=CharterBT" rel="stylesheet">
+
 	
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -106,10 +109,199 @@
 	</header>
 	
 	<div id="gtco-main" ng-controller="BlogController">
+		<div class="comment-s0" id="s0" ng-mouseenter="makeVisible(0)" ng-mouseleave="makeInvisible(0)"> 
+			<a data-toggle="collapse" href="#collapse0" role="button" aria-expanded="false" aria-controls="collapse0" class="text-thought-f-2"><i class="icon-speech-bubble"></i></a>
+		</div>
+
+		<div class="collapse text-area-input-s0" id="collapse0">
+		  <div class="card card-body">
+		    <div class="input-group">
+			  <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" ng-model="notes.textS0">
+			  <div class="input-group-append">
+			    <button type="button" class="btn btn-outline-secondary" ng-click="save(0)" ng-disabled="notes.textS0.length >= 160">Save</button>
+			    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			      <span class="sr-only">Toggle Dropdown</span>
+			    </button>
+			    <div class="dropdown-menu">
+			      <a class="dropdown-item" ng-click="clear(0)">Clear</a>
+			      <a class="dropdown-item" data-toggle="collapse" href="#collapse0" role="button" aria-expanded="false" aria-controls="collapse0">Exit</a>
+			    </div>
+
+			  </div>
+			</div>
+			<div ng-class="{'char-count-valid': notes.textS0.length <= 160 || notes.textS0 === undefined, 'char-count-invalid': notes.textS0.length > 160}">
+				{{160 - notes.textS0.length}}
+			</div>
+			<ul class="list-group list-group-flush">
+			    <li class="list-group-item note-entry" ng-repeat="entry in entries[0] track by $index" ng-click="changeText(0, $index)">{{entry}} 
+
+				<button type="button" class="btn btn-dark note-button" ng-show="click[0][$index]" ng-click="delete(0, $index)">Delete</button>
+			</li>
+			</ul>
+		  </div>
+		</div>
+
+
+
+		<div class="comment-s1" id="s1" ng-mouseenter="makeVisible(1)" ng-mouseleave="makeInvisible(1)"> 
+			<a data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1" class="text-thought-f-2"><i class="icon-speech-bubble"></i></a>
+		</div>
+
+
+		<div class="collapse text-area-input-s1" id="collapse1">
+		  <div class="card card-body">
+		    <div class="input-group">
+			  <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" ng-model="notes.textS1">
+			  <div class="input-group-append">
+			    <button type="button" class="btn btn-outline-secondary" ng-click="save(1)" ng-disabled="notes.textS1.length >= 160">Save</button>
+			    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			      <span class="sr-only">Toggle Dropdown</span>
+			    </button>
+			    <div class="dropdown-menu">
+			      <a class="dropdown-item" ng-click="clear(1)">Clear</a>
+			      <a class="dropdown-item" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">Exit</a>
+			    </div>
+
+			  </div>
+			</div>
+			<div ng-class="{'char-count-valid': notes.textS1.length <= 160 || notes.textS1 === undefined, 'char-count-invalid': notes.textS1.length > 160}">
+				{{160 - notes.textS1.length}}
+			</div>
+			<ul class="list-group list-group-flush">
+			    <li class="list-group-item note-entry" ng-repeat="entry in entries[1] track by $index" ng-click="changeText(1, $index)">{{entry}} 
+
+				<button type="button" class="btn btn-dark note-button" ng-show="click[1][$index]" ng-click="delete(1, $index)">Delete</button>
+			</li>
+			    
+			</ul>
+
+
+		  </div>
+		</div>
+
+		<div class="comment-s2" id="s2" ng-mouseenter="makeVisible(2)" ng-mouseleave="makeInvisible(2)"> 
+			<a data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2" class="text-thought-f-1"><i class="icon-speech-bubble"></i></a>
+			<a data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2" class="text-thought-f-2"><i class="icon-speech-bubble"></i></a>	
+			<a data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2" class="text-thought-f-3"><i class="icon-speech-bubble"></i></a>
+
+		</div>
+
+
+
+		<div class="collapse text-area-input-s2" id="collapse2">
+		  <div class="card card-body">
+		    <div class="input-group">
+			  <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" ng-model="notes.textS2">
+			  <div class="input-group-append">
+			    <button type="button" class="btn btn-outline-secondary" ng-click="save(2)" ng-disabled="notes.textS2.length >= 160">Save</button>
+			    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			      <span class="sr-only">Toggle Dropdown</span>
+			    </button>
+			    <div class="dropdown-menu">
+			      <a class="dropdown-item" ng-click="clear(2)">Clear</a>
+			      <a class="dropdown-item" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">Exit</a>
+			    </div>
+
+			  </div>
+			</div>
+			<div ng-class="{'char-count-valid': notes.textS2.length <= 160 || notes.textS2 === undefined, 'char-count-invalid': notes.textS2.length > 160}">
+				{{160 - notes.textS1.length}}
+			</div>
+			<ul class="list-group list-group-flush">
+			    <li class="list-group-item note-entry" ng-repeat="entry in entries[2] track by $index" ng-click="changeText(2, $index)">{{entry}} 
+
+				<button type="button" class="btn btn-dark note-button" ng-show="click[2][$index]" ng-click="delete(2, $index)">Delete</button>
+			</li>
+			    
+			</ul>
+
+
+		  </div>
+		  <a class="arrow-2"><i class="icon-arrow-up"></i></a>
+		</div>
+
+
+
+		<div class="comment-s3" id="s3" ng-mouseenter="makeVisible(3)" ng-mouseleave="makeInvisible(3)"> 
+			<a data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3" class="text-thought-f-1"><i class="icon-speech-bubble"></i></a>
+			<a data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3" class="text-thought-f-2"><i class="icon-speech-bubble"></i></a>
+			<a data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3" class="text-thought-f-3"><i class="icon-speech-bubble"></i></a>
+		</div>
+
+		<div class="collapse text-area-input-s3" id="collapse3">
+		  <div class="card card-body">
+		    <div class="input-group">
+			  <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" ng-model="notes.textS3">
+			  <div class="input-group-append">
+			    <button type="button" class="btn btn-outline-secondary" ng-click="save(3)" ng-disabled="notes.textS3.length >= 160">Save</button>
+			    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			      <span class="sr-only">Toggle Dropdown</span>
+			    </button>
+			    <div class="dropdown-menu">
+			      <a class="dropdown-item" ng-click="clear(3)">Clear</a>
+			      <a class="dropdown-item" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3">Exit</a>
+			    </div>
+
+			  </div>
+			</div>
+			<div ng-class="{'char-count-valid': notes.textS3.length <= 160 || notes.textS3 === undefined, 'char-count-invalid': notes.textS3.length > 160}">
+				{{160 - notes.textS1.length}}
+			</div>
+			<ul class="list-group list-group-flush">
+			    <li class="list-group-item note-entry" ng-repeat="entry in entries[3] track by $index" ng-click="changeText(3, $index)">{{entry}} 
+
+				<button type="button" class="btn btn-dark note-button" ng-show="click[3][$index]" ng-click="delete(3, $index)">Delete</button>
+			</li>
+			    
+			</ul>
+
+
+		  </div>
+		  <a class="arrow-1"><i class="icon-arrow-down"></i></a>
+		   <a class="arrow-2"><i class="icon-arrow-up"></i></a>
+		</div>
+
+
+		<div class="comment-s4" id="s4" ng-mouseenter="makeVisible(4)" ng-mouseleave="makeInvisible(4)"> 
+			<a data-toggle="collapse" href="#collapse4" role="button" aria-expanded="false" aria-controls="collapse4" class="text-thought-f-1"><i class="icon-speech-bubble"></i></a>
+
+			<a data-toggle="collapse" href="#collapse4" role="button" aria-expanded="false" aria-controls="collapse4" class="text-thought-f-3"><i class="icon-speech-bubble"></i></a>
+		</div>
+
+		<div class="collapse text-area-input-s4" id="collapse4">
+		  <div class="card card-body">
+		    <div class="input-group">
+			  <input type="text" class="form-control" aria-label="Text input with segmented dropdown button" ng-model="notes.textS4">
+			  <div class="input-group-append">
+			    <button type="button" class="btn btn-outline-secondary" ng-click="save(4)" ng-disabled="notes.textS4.length >= 160">Save</button>
+			    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			      <span class="sr-only">Toggle Dropdown</span>
+			    </button>
+			    <div class="dropdown-menu">
+			      <a class="dropdown-item" ng-click="clear(4)">Clear</a>
+			      <a class="dropdown-item" data-toggle="collapse" href="#collapse4" role="button" aria-expanded="false" aria-controls="collapse4">Exit</a>
+			    </div>
+
+			  </div>
+			</div>
+			<div ng-class="{'char-count-valid': notes.textS3.length <= 160 || notes.textS3 === undefined, 'char-count-invalid': notes.textS3.length > 160}">
+				{{160 - notes.textS1.length}}
+			</div>
+			<ul class="list-group list-group-flush">
+			    <li class="list-group-item note-entry" ng-repeat="entry in entries[4] track by $index" ng-click="changeText(4, $index)">{{entry}} 
+
+				<button type="button" class="btn btn-dark note-button" ng-show="click[4][$index]" ng-click="delete(4, $index)">Delete</button>
+			</li>
+			    
+			</ul>
+
+
+		  </div>
+		</div>
 		<div class="container">
-			<div class="row row-pb-md">
+			<div class="row row-md" ng-mouseenter="makeVisible(0)" ng-mouseleave="makeInvisible(0)">
 				<div class="col-md">
-					<p><i>I built this blog interface to hopefully make it easier for you, the reader, to take note of any thoughts or feeling you have while reading a particular section. To do so, hover over the section and click the thought bubble next to a particular section to easily record your thoughts as you read through. In the end feel free to share them here for anyone to see or save them to your local machine for your own convenience.</i></p>
+					<p><i>I built this blog interface make it easier for you, the reader, to take note of any thoughts or feeling you have while reading a particular section. To do so, hover over the section and click the thought bubble next to a particular section. Record and save your thoughts. Click the thought bubble again to close the section. In the end feel free to share them here for anyone to see or save them to your local machine for your own convenience. For now, the notes features is only available on screens larger than 1200px (most laptops). Your feedback on the usefulness/uselessness of this feature is greatly appreciated!</i></p>
 
 					
 				
@@ -118,18 +310,26 @@
 									
 
 					<p>Disclaimer: While I do not yet own this product (being in college hasn’t quite yielded the opportunity to acquire the $60k+ I need to purchase it) I fell in love with this product the first time I saw it and all the time I've been inside of one. This is considerable too, as I like to see myself as an electric car enthusiast.</p>
-
-					<h3>What does the Model S achieve?</h3>
+					</br>
+				</div>
+			</div>
+			<div class="row row-md" ng-mouseenter="makeVisible(1)" ng-mouseleave="makeInvisible(1)">
+				<div class="col-md">
+					<h2>What does the Model S achieve?</h2>
 
 					<p>The goal of the Tesla Model S (and, in fact, all of Tesla’s vehicles) is, simply put, to make driving electric better and fun. This means minimizing the compromises a driver must make between a standard gas car and an electric car. Predecessors to Tesla’s electric vehicles made driving electric impractical and unspectacular due to range limits and lack of enhanced vehicular features. Unlike the model S, these predecessors did not run like sports cars or support nearly as many technological advancements. Tesla pushed the idea of what an electric vehicle in particular and a vehicle in general could be with its infotainment system, autopilot, and other such features.</p>
 
 					<p>Moreover, rather prudently, along with producing an excellent electric vehicle, Tesla invested in supporting infrastructure like charging stations. For Drivers in the United States, Tesla in fact made it possible to drive around the United States, hopping from charging station to charging station, with the Model S, a feat previously unimaginable.</p>
-
-					<h3> What’s so special about it?</h3>
+					</br>
+				</div>
+			</div>
+			<div class="row row-md" ng-mouseenter="makeVisible(2)" ng-mouseleave="makeInvisible(2)">
+				<div class="col-md">
+					<h2> What’s so special about it?</h2>
 
 					<p>While it would have been impressive enough to release an electric vehicle with the specs of the model S, this vehicle amazes me with its spectacular infotainment system, thoughtful interior design, and important company mission. </p>
 
-					<p>When I first laid eyes upon the infotainment system I was blown away. Never before had I seen the central dashboard of a vehicle completely taken over by a tablet capable of controlling dozens of aspects of the vehicle. No buttons or knobs anywhere! It was even more impressive to learn that it is always connected to the internet, allowing live updates from the company that improve the functioning of the car. </p>
+					<p>When I first laid eyes upon the infotainment system my understanding of the current year became distorted. Surely such a vehicle would only be available in some future years from now. Never before had I seen the central dashboard of a vehicle completely taken over by a tablet capable of controlling dozens of aspects of the vehicle. No buttons or knobs anywhere! It was even more impressive to learn that it is always connected to the internet, allowing live updates from the company that improve the functioning of the car. This feature truly made the car feel cutting edge which made me want it even more.</p>
 
 					<p>A well-known example of this update capability being put to use can be seen with the creep feature. This feature, toggled by a simple on/off switch on the infotainment system, allows the model S to creep forward. When the driver releases their foot form the brake (similar to an automatic transmission vehicle). The release of this feature was a direct result of customer feedback advocating for this occurrence. All it took was a simple update relayed by the infotainment system and users across the world could enable creep mode! When combined with autopilot, magic door handles, lane assist, and other such features, the Model S becomes a technological marvel on wheels and not just another vehicle.</p>
 
@@ -137,23 +337,31 @@
 
 					<p>And now a short story:</p>
 
-					<p>Many years ago, I want on a trip to North Carolina with my family. Starting in Maryland, where I grew up, this was a five-hour drive. Normally this wouldn’t be a problem as I have a family of four and the car we used comfortably fit all of us. As we were loading into the vehicle, a family friend arrived at our home. Unbeknownst to me, she was to join us on our journey within our car. Me, being the youngest, was forced to take the middle seat. I cried. With the raised floor and narrower seat, I was largely uncomfortable throughout the entire trip. Fin.</p>
+					<p>Many years ago, I want on a trip to North Carolina with my family to attend a mairrage between my cousin and his beloved. Because we were driving and starting in Maryland, where I grew up, this would be a five-hour drive. Normally such a drive would not be a problem, as I have a family of four and the car we used for trips like these comfortably fit all of us. As we were loading into the vehicle, a family friend arrived at our home. Perhaps she needed to drop something off before we left? I felt I had nothing to worry about. Then I saw her suitcase and although I denied the relatty I was to face, the increase in my anxiety was undeniable. Upon questinoing my parents, it was announced to me that she was to join us on our journey within our car. I knew immediately that me, being the youngest, would be forced to take the middle seat. I cried. With the raised floor and narrower seat, I was largely uncomfortable throughout the entire trip. Fin.</p>
 
-					<p>So, you can see, I am predisposed to having a deep appreciation for a vehicle that make appropriate accommodations in the back seat. I want those that come after me to have a better life than I. The model S back seat area has a flat floor and bench seating, allowing three passengers to fit comfortably and without a worsened experience for the middle seat taker. Additionally, for users of this vehicle with families, the bench design allows for up to three car seats at once. These details are perhaps not the most impressive of the model S, but they nevertheless show the wide range of possibilities the Tesla affords, which is highly impressive to me.</p>
+					<p>You can see now why I might be predisposed to having a deep appreciation for a vehicle that makes appropriate accommodations in the back seat. No one should go through what I had to endure. The model S back seat area has a flat floor and bench seating, allowing three passengers to fit comfortably and without a worsened experience for the middle seat taker. Additionally, for users of this vehicle with families, the bench design allows for up to three car seats at once. These details are perhaps not the most impressive of the model S, but they nevertheless show the wide range of possibilities the Tesla affords, which is highly impressive to me.</p>
 
 					<p>The mission that drives the people behind Tesla - to accelerate the world’s transition to sustainable energy - is an important one. As a firm believer in global warming as a direct result of pollution caused by human activity, I try to do what I can to decrease my own carbon footprint. Purchasing a Tesla model 6 would, in my eyes, be a very direct step towards this guiding principle of mine. In other words, purchasing a Tesla not only fulfills my desire to own the product, but also helps me fulfill a responsibility I believe many of us, merely by being humans on this planet, have. Each step any of us takes toward reducing our carbon footprint ensures the health of our planet for future generations.</p>
+					</br>
 
-					<h3> Alternatives </h3>
+				</div>
+			</div>
+			<div class="row row-md" ng-mouseenter="makeVisible(3)" ng-mouseleave="makeInvisible(3)">
+				<div class="col-md">
+					<h2> Alternatives </h2>
 
-					<p>To understand why I have such a strong appreciation for this vehicle requires a brief survey of its competitors.</p>
+					<p>Understaning my strong appreciation for this vehicle requires a brief survey of its competitors.</p>
 
 					<p>Obviously, the vast majority of cars on the road are standard, gas consuming automatic vehicles, and these are indeed competitors to the Tesla model S. They are familiar, fast to refuel (5 – 10 minutes for full tank vs. 20 minutes to several hours), and far cheaper to buy.</p>
 
-					<p>The introduction of model S, however, makes familiar seem stale, given the number of technological advancements. And while traditional vehicles undeniably have quicker refueling times, the technology is continuously improving and current owners often have long chucks within their days during which they can charge their vehicle at no inconvenience to them (i.e. at work, while they sleep, etc.)</p>
+					<p>The introduction of model S, however, makes familiar seem stale, given the number of technological advancements. And while traditional vehicles undeniably have quicker refueling times, the technology is continuously improving and current owners often have long chucks within their days during which they can charge their vehicle at no inconvenience to them (i.e. at work, while they sleep, etc.). I would likely charge my vehicle while at work or at the gym.</p>
 
-					<p>Additionally, Tesla is not the only company producing electric vehicles. Examples of startups in the space include Rivian, Faraday future, and Lucid air. Being start-ups, there is still so much uncertainty surrounding their products and the promises their making. Time will tell if they do indeed come to be close rivals with the model S. Even if they do, they will have to overcome Tesla’s ever-growing dominance, reputation, and strong brand. Moreover, these start-ups currently do not plan to allow their cars to be utilized by Tesla’s extensive charging infrastructure (which they have offered), presenting yet another barrier these startups will face.</p>
+					<p>Additionally, Tesla is not the only company producing advanced electric vehicles. There are startups in the space like Rivian, Faraday future, and Lucid air. Being start-ups, there is still so much uncertainty surrounding their products and the promises their making. Time will tell if they do indeed come to be close rivals with the model S and other Tesla vehicles. Even if they do, they will have to overcome Tesla’s ever-growing dominance, reputation, and brand. Moreover, these start-ups currently do not plan to allow their cars to be utilized by Tesla’s extensive charging infrastructure (which Tesla has offered to them), presenting yet another barrier these startups will face.</p>
 
-					<p>Well known auto manufacturers are also working on their own electric vehicles (i.e. Toyota, Ford, Audi, etc.). These companies all have decades of experience building vehicles with the capability to hire the various types of engineers they need to allow their vehicles to offer the same technological capabilities of the model S. It is not unreasonable, then, to expect that they should be able to produce electric vehicles that far outpace the Model S. Additionally, their size permits economies of scale, yielding the potential to offer a better price for a comparable model. Unfortunately, the vehicles produced thus far have not been up to par. These vehicles have often lacked an appealing design and/or do not have the same specs and range as the model S. I invite you to look through the following side by side view of various electric vehicle models and the model S. This view makes the shortcomings of the alternatives even more apparent.</p> 
+					<p>Well known auto manufacturers are also working on their own electric vehicles (i.e. Toyota, Ford, Audi, etc.). These companies all have decades of experience building vehicles with the capability to hire the various types of engineers they need to allow their vehicles to offer the same technological capabilities as the model S. It is not unreasonable, then, to expect that they should be able to produce electric vehicles that far outpace the Model S. Additionally, their size permits economies of scale, yielding the potential to offer a better price for a comparable model. Unfortunately, the vehicles produced thus far have not been up to par. These vehicles have often lacked an appealing design and/or do not have high quality specs like the model S. I invite you to look through the following side by side view of various electric vehicle models and the model S. This view makes the shortcomings of the alternatives even more apparent. Moreover, look at the shapes of the various vehicles you see.</p> 
+					</br>
+				    </br>
+				    </br>
 
 					
 				<div style="padding-left:100px;">
@@ -164,10 +372,10 @@
 							  </div>
 							  <ul class="list-group list-group-flush">
 							    <li class="list-group-item"><div style="display: inline-block; width: 30%;"><b>Range (mi)</b></div><div style="display: inline-block; text-align: right; width: 70%;">335</div></li>
-							    <li class="list-group-item"><div style="display: inline-block; width: 40%;"><b>Horsepower (hp)</b></div><div style="display: inline-block; text-align: right;width: 60%;">518</div></li>
-							    <li class="list-group-item"><div style="display: inline-block"><b>Charging Time (hours)</b></div><div style="display: inline-block; text-align: right; width: 56%;">7.75 at 220V</div></li>
-							    <li class="list-group-item"><div style="display: inline-block"><b>0 - 60 (seconds)</b></div><div style="display: inline-block; text-align: right; width: 66%;">4.1</div></li>
-							    <li class="list-group-item"><div style="display: inline-block"><b>Price</b></div><div style="display: inline-block; text-align: right;width:89%">$84,750</div></li>
+							    <li class="list-group-item"><div style="display: inline-block;"><b>Horsepower (hp)</b></div><div style="display: inline-block; text-align: right;width: 55%;">518</div></li>
+							    <li class="list-group-item"><div style="display: inline-block"><b>Charging Time (hours)</b></div><div style="display: inline-block; text-align: right; width: 39%;">7.75 at 220V</div></li>
+							    <li class="list-group-item"><div style="display: inline-block"><b>0 - 60 (seconds)</b></div><div style="display: inline-block; text-align: right; width: 59%;">4.1</div></li>
+							    <li class="list-group-item"><div style="display: inline-block"><b>Price</b></div><div style="display: inline-block; text-align: right;width:85%">$84,750</div></li>
 							    
 							  </ul>
 							  <div class="card-body" style="background-color:#842222;">
@@ -185,9 +393,9 @@
 							  <ul class="list-group list-group-flush">
 							    <li class="list-group-item"><div style="text-align: center; color: red;">151</div></li>
 							    <li class="list-group-item"><div style="text-align: center; color: red;">147</div></li>
-							    <li class="list-group-item"><div style="text-align: center;">7.5 at 220V</div></li>
-							    <li class="list-group-item"><div style="text-align: center;">7.5</div></li>
-							    <li class="list-group-item"><div style="text-align: center;">$29,990</div></li>
+							    <li class="list-group-item"><div style="text-align: center; color: green;">7.5 at 220V</div></li>
+							    <li class="list-group-item"><div style="text-align: center; color: red;">7.5</div></li>
+							    <li class="list-group-item"><div style="text-align: center; color: green;">$29,990</div></li>
 							  </ul>
 							  <div class="card-body" style="background-color:#842222;">
 							  </div>
@@ -202,9 +410,9 @@
 							  <ul class="list-group list-group-flush">
 							    <li class="list-group-item" style="text-align: center; color: {{data.rangColor}}">{{data.range}}</li>
 							    <li class="list-group-item" style="text-align: center; color: {{data.hpColor}}">{{data.horsepower}}</li>
-							    <li class="list-group-item" style="text-align: center;">{{data.chargeTime}}</li>
-							    <li class="list-group-item" style="text-align: center;">{{data.acceleration}}</li>
-							    <li class="list-group-item" style="text-align: center;">{{data.price}}</li>
+							    <li class="list-group-item" style="text-align: center; color: {{data.chargeTimeColor}}">{{data.chargeTime}}</li>
+							    <li class="list-group-item" style="text-align: center;color: {{data.accelerationColor}}">{{data.acceleration}}</li>
+							    <li class="list-group-item" style="text-align: center; color: {{data.priceColor}}">{{data.price}}</li>
 							  </ul>
 							  <div class="card-body" style="background-color:#842222;">
 							  </div>
@@ -219,7 +427,7 @@
 					    <span class="sr-only">Next</span>
 					  </a>
 
-					  <ol class="carousel-indicators" style="position:relative; margin-left: 35%; margin-right: 0%; bottom: 28px;">
+					  <ol class="carousel-indicators" id="indicators">
 					    <li data-target="#carouselCars" data-slide-to="0"></li>
 					    <li data-target="#carouselCars" data-slide-to="1"></li>
 					    <li data-target="#carouselCars" data-slide-to="2"></li>
@@ -234,15 +442,23 @@
 				    </br>
 				    </br>
 				    </br>
-				    <p>Prius and other hybrid vehicles have been around for years as well but for much of the same reasons above, to put it simply, these vehicles are just not as appealing as the Tesla model 6.</p>
+				    <p>Did you see that? The way in which all of the Tesla alternatives - excluding the future offerings of Rivian and Lucid Air - have a bubble like shape? This design (known as the Kamm tail) helps improve aerodynamic efficiency. Interestlingy enough, however, the Tesla Model S beats a majority of these vehicles in aerodynamic efficiency, as measured by its drag coefficient without utilizing this somewhat silly shape.</p>
 
-					<p>Even with all of these competitors, Tesla remains far ahead in its ability to make a compelling electric vehicle that people actually want to buy. Its charging infrastructure and its huge amount of autopilot data (1 Billion miles driven on autopilot!), among other aspects of the company, are strong pillars that support their dominance today and for at least the next several years.</p>
+				    <p>Prius and other hybrid vehicles have been around for years as well but for much of the same reasons above, these vehicles are just not as appealing as the Tesla model 6.</p>
 
-					<h3> No product is without sin </h3>
+					<p>Even with all of these competitors, Tesla remains far ahead in its ability to make a compelling electric vehicle that people actually want to buy. Its charging infrastructure and its considerable autopilot data (1 Billion miles driven on autopilot!), among other aspects of the company, are strong pillars that support their dominance today, and for at least the next several years.</p>
+				</div>
+			</div>
+			<div class="row row-md" ng-mouseenter="makeVisible(4)" ng-mouseleave="makeInvisible(4)">
+				<div class="col-md">
+
+					<h2> No product is perfect </h2>
 
 					<p>All products have faults. The model S is no exception. </p>
 
-					<p>The model S can be cost prohibitive for the majority of would be users. The price ranges from $60K to $130k depending on the model and configuration of additional features you choose. There have also been complaints that, for passengers over 6 feet, sitting in the back can be somewhat uncomfortable due to the sloping ceiling of the vehicle. </p>
+					<p>The model S can be cost prohibitive for the majority of would be users. The price ranges from $60K to $130k depending on the model and configuration of additional features you choose. The list side-by-side view above clearly shows that many of the alternatives have significantly lower prices. 
+
+					<p>There have also been complaints that, for passengers over 6 feet, sitting in the back can be somewhat uncomfortable due to the sloping ceiling of the vehicle. </p>
 
 					<p>As mentioned before, charging is not as fast as refueling for a traditional vehicle. It takes anywhere form 20 minutes to several hours depending on the amount of charge sought and the charging device.</p>
 
@@ -250,12 +466,11 @@
 
 					<p>These faults are not without recourse, however. While the upfront cost is prohibitive, there are long term cost savings that can justify the expense. With the average American spending $2000 a year on gas, ownership of the model S would reduce this amount to 0. If this isn’t enough, we are lucky enough to have the currently model 3 available which is a cheaper, less impressive version of the model S, but still worth every penny.</p> 
 
-					<p>Also, longer charging times may be spawning an entire new industry. Companies are starting to transform charging stations into lifestyle products. An excellent example of this is Nio house which offers a number of services within charging stations. In this way, charging one’s electric vehicle could become a convenient benefit for tesla owners.</p>
+					<p>Also, longer charging times may be spawning an entire new industry. Companies are starting to transform charging stations into lifestyle products. An excellent example of this is Nio house which offers a number of services within charging stations. Although a chinese based company, one can image similar offerings arriving in the US soon. If that's not enough, there are already quick charge stations in convenient parking lots, although not quite as wide spread in certain areas. Even as Tesla and continues to improve its charging times, It makes charging less and less of a pain.</p>
 
 					<p>With regard to the indirect carbon footprint, while it is unfortunate reality we face today, there is some hope. Tesla offers clean energy infrastructure that an owner can install in their homes which can then be used to charge the vehicle. Despite this being beyond the scope of Tesla’s immediate goals, they are still impressively dedicated to their company mission!</p>
 
-					<p>Put together, the Tesla model S is a technological platform on wheels. As icing on the cake, the vehicle is also the safest, coolest, fastest, best performing, and convenient electric vehicle on the market. I aim to own one within the next 5 years, salary permitting!</p>
-
+					<p>Put together, the Tesla model S is a technological platform on wheels. As icing on the cake, the vehicle is also the safest, coolest, fastest, best performing, and convenient electric vehicle on the market. With all this, no matter how hard I try, I can only come to one conclusion: the Tesla model S is the best electric car avaialable today and is truly my favorite product as a result.</p>
 
 						
 				</div>
@@ -263,7 +478,30 @@
 			<div class="row">
 				
 			</div>
+
+			<div id="disqus_thread"></div>
+			<script>
+
+			/**
+			*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+			*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+			
+			var disqus_config = function () {
+			this.page.url = "https://ljdblog.cfapps.io/";  // Replace PAGE_URL with your page's canonical URL variable
+			this.page.identifier = "blog01"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+			};
+			
+			(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = 'https://https-ljdblog-cfapps-io-1.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 		</div>
+		
+                            
 	</div>
 
 

@@ -2,13 +2,19 @@ var app = angular.module('betterBlog', ['ngAnimate'])
 
 
 
-app.controller('BlogController', ['$scope', '$http', function($scope, $http) {
+app.controller('BlogController', ['$scope', '$http', '$window', function($scope, $http, $window) {
+	$scope.entries = [[],[],[]]
+	$scope.click = [[false], [], []]
+	var count = 0
 	$scope.makeVisible = function(index) {
-		document.getElementById("p0").style.visibility = "visible"
+		
+		if ($window.innerWidth > 1200)
+			document.getElementById("s" + index).style.visibility = "visible"
 	}
 
 	$scope.makeInvisible = function(index) {
-		document.getElementById("p0").style.visibility = "hidden"
+		console.log("leave: s" + index + " --- " + count++)
+		document.getElementById("s" + index).style.visibility = "hidden"
 	}
 
 	$scope.carData = [
@@ -19,7 +25,7 @@ app.controller('BlogController', ['$scope', '$http', function($scope, $http) {
 			"horsepower": "200",
 			"hpColor": "red",
 			"chargeTime": "9.3 at 220V",
-			"chargeTimeColor": "green",
+			"chargeTimeColor": "red",
 			"acceleration": "6.5",
 			"accelerationColor": "red",
 			"price": "$36,620",
@@ -33,8 +39,11 @@ app.controller('BlogController', ['$scope', '$http', function($scope, $http) {
 			"horsepower": "181",
 			"hpColor": "red",
 			"chargeTime": "6.5 at 220V",
+			"chargeTimeColor": "green",
 			"acceleration": "7.2",
+			"accelerationColor": "red",
 			"price": "$44,450",
+			"priceColor": "green",
 			"image": "/images/bmwi3.jpg"
 		},
 		{
@@ -44,8 +53,11 @@ app.controller('BlogController', ['$scope', '$http', function($scope, $http) {
 			"horsepower": "135",
 			"hpColor": "red",
 			"chargeTime": "4 at 220V",
+			"chargeTimeColor": "green",
 			"acceleration": "6.7",
+			"accelerationColor": "red",
 			"price": "$33,210",
+			"priceColor": "green",
 			"image": "/images/fiat.jpg"
 		},
 		{
@@ -55,8 +67,11 @@ app.controller('BlogController', ['$scope', '$http', function($scope, $http) {
 			"horsepower": "109",
 			"hpColor": "red",
 			"chargeTime": "5 at 220V",
+			"chargeTimeColor": "green",
 			"acceleration": "7.6",
+			"accelerationColor": "red",
 			"price": "$33,950",
+			"priceColor": "green",
 			"image": "/images/kiasoul.jpg"
 		},
 		{
@@ -66,8 +81,11 @@ app.controller('BlogController', ['$scope', '$http', function($scope, $http) {
 			"horsepower": "118",
 			"hpColor": "red",
 			"chargeTime": "4 at 220V",
+			"chargeTimeColor": "green",
 			"acceleration": "9.7",
+			"accelerationColor": "red",
 			"price": "$30,315",
+			"priceColor": "green",
 			"image": "/images/hyundai.jpg"
 		},
 		{
@@ -77,8 +95,11 @@ app.controller('BlogController', ['$scope', '$http', function($scope, $http) {
 			"horsepower": "400",
 			"hpColor": "red",
 			"chargeTime": "~4 at 220V",
+			"chargeTimeColor": "green",
 			"acceleration": "2.5",
+			"accelerationColor": "green",
 			"price": "$60,000",
+			"priceColor": "green",
 			"image": "/images/lucid-air.jpg"
 		},
 		{
@@ -88,8 +109,11 @@ app.controller('BlogController', ['$scope', '$http', function($scope, $http) {
 			"horsepower": "402 - 700",
 			"hpColor": "black",
 			"chargeTime": "~4 at 220V",
+			"chargeTimeColor": "green",
 			"acceleration": "< 3",
+			"accelerationColor": "green",
 			"price": "$70,000",
+			"priceColor": "green",
 			"image": "/images/rivian.jpg"
 		},
 		{
@@ -99,11 +123,31 @@ app.controller('BlogController', ['$scope', '$http', function($scope, $http) {
 			"horsepower": "1050",
 			"hpColor": "green",
 			"chargeTime": "~4.5 at 220V",
+			"chargeTimeColor": "green",
 			"acceleration": "2.39",
+			"accelerationColor": "green",
 			"price": "$180,000",
+			"priceColor": "red",
 			"image": "/images/ffp1.jpg"
 		}
 	]
 
+	$scope.save = function(index) {
+
+		$scope.entries[index].push($scope.notes["textS" + index])
+		$scope.click[index].push(false)
+		console.log($scope.entries)
+	}
+
+	$scope.clear = function(index) {
+		$scope.notes["textS" + index] = ""
+	}
+
+	$scope.changeText = function(section, index) {
+		$scope.click[section][index] = !$scope.click[section][index]
+	}
 	
+	$scope.delete = function(section, index) {
+		$scope.entries[section].splice(index, 1)
+	}
 }])

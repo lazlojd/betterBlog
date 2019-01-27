@@ -11,13 +11,17 @@
 *
 * ======================================================= */
 body {
-  font-family: "Roboto Mono", serif;
+  font-family: 'Charter BT', serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 25px;
   line-height: 1.7;
-  color: #666666;
-  background: #e6e6e6;
+  color: 292929;
+  background: #FFFFFF;
 }
+/*
+div {
+  border: double;
+}*/
 
 #page {
   position: relative;
@@ -110,9 +114,157 @@ h1, h2, h3, h4, h5, h6, figure {
   border-bottom: 2px solid red;
 
 }
-.comment {
-  padding: 80px 0;
+.comment-s0 {
+  position: absolute;
+  top: 11%;
+  left: 10%;
+  width: 15%;
+  height: 7%;
   visibility: hidden;
+}
+
+.text-thought {
+  position: absolute; 
+  top: 50%;
+}
+
+.text-thought-f-1 {
+  position: absolute; 
+  top: 25%;
+}
+
+.text-thought-f-2 {
+  position: absolute; 
+  top: 50%;
+}
+
+.text-thought-f-3 {
+  position: absolute; 
+  top: 75%;
+}
+
+.text-area-input-s0 {
+  position: absolute;
+  top: 13%;
+  left: 80%;
+  margin-right: 20px;
+}
+
+.comment-s1 {
+  position: absolute;
+  top: 18%;
+  left: 10%;
+  width: 15%;
+  height: 6%;
+  visibility: hidden;
+}
+
+
+.text-area-input-s1 {
+  position: absolute;
+  top: 19.5%;
+  left: 80%;
+  margin-right: 20px;
+}
+
+
+.comment-s2 {
+  position: absolute;
+  top: 24%;
+  left: 10%;
+  width: 15%;
+  height: 21%;
+  visibility: hidden;
+}
+
+.arrow-1 {
+  position: absolute;
+  top: -750%;
+  left: 50%;
+}
+
+.arrow-2 {
+  position: absolute;
+  top: 650%;
+  left: 50%;
+}
+
+.text-area-input-s2 {
+  position: absolute;
+  top: 33%;
+  left: 80%;
+  margin-right: 20px;
+}
+
+
+.comment-s3 {
+  position: absolute;
+  top: 45.5%;
+  left: 10%;
+  width: 15%;
+  height: 29%;
+  visibility: hidden;
+}
+
+
+.text-area-input-s3 {
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  margin-right: 20px;
+}
+
+
+.comment-s4 {
+  position: absolute;
+  top: 75%;
+  left: 10%;
+  width: 15%;
+  height: 14.5%;
+  visibility: hidden;
+}
+
+
+.text-area-input-s4 {
+  position: absolute;
+  top: 80%;
+  left: 82%;
+  margin-right: 20px;
+}
+
+
+.char-count-valid {
+  font-size: 12px;
+  color: #999999;
+}
+
+.char-count-invalid {
+  font-size: 12px;
+  color: #CB444A;
+}
+
+
+
+.note-entry {
+  font-family: 'Charter BT', serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: 292929;
+  width: 100%;
+  cursor: pointer;
+}
+
+.note-button {
+  transition: all linear 0.5s;
+  width: 100%;
+  height: 80%;
+  margin-top: 20px;
+}
+
+.ng-show {
+  height: 100%;
+
 }
 
 .gtco-nav #gtco-logo {
@@ -2158,30 +2310,67 @@ figure figcaption {
   color: red;
 }
 #advance {
-    top: 41%;
-    left:90%;
+    top: 25%;
+    left: 93%;
 }
+
+#indicators {
+  position: relative; 
+  margin-left: 35%; 
+  margin-right: 0%; 
+  bottom: 28px;
+}
+
+
 
 @media screen and (max-width: 1200px) {
   #advance {
-    top: 50%;
+    top: 40%;
     left: 65%;
   }
+
+  #indicators {
+    position: relative; 
+    margin-left: -45%; 
+    margin-right: 0%; 
+    bottom: 28px;
+  }
+  #s0, #s1, #s2, #s3, #s4 {
+    display: none;
+  }
+
+
+  
 }
 
 @media screen and (max-width: 992px) {
   #advance {
-    top: 50%;
+    top: 40%;
     left: 90%;
   }
 
-  @media screen and (max-width: 798px) {
-      #advance {
-      top: 50%;
-      left: 0;
-    }
+  #indicators {
+    position: relative; 
+    margin-left: -25%; 
+    margin-right: 0%; 
+    bottom: 28px;
   }
 }
+
+@media screen and (max-width: 798px) {
+    #advance {
+      top: 40%;
+      left: 0;
+  }
+
+  #indicators {
+    position: relative; 
+    margin-left: 5%; 
+    margin-right: 0%; 
+    bottom: 28px;
+  }
+}
+
 
 
 /*# sourceMappingURL=style.css.map */
