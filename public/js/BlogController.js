@@ -3,9 +3,8 @@ var app = angular.module('betterBlog', ['ngAnimate'])
 
 
 app.controller('BlogController', ['$scope', '$http', '$window', function($scope, $http, $window) {
-	$scope.entries = [[],[],[]]
-	$scope.click = [[false], [], []]
-	var count = 0
+	$scope.entries = [[],[],[], [], []]
+	$scope.click = [[], [], [], [], []]
 	$scope.makeVisible = function(index) {
 		
 		if ($window.innerWidth > 1200)
@@ -13,7 +12,7 @@ app.controller('BlogController', ['$scope', '$http', '$window', function($scope,
 	}
 
 	$scope.makeInvisible = function(index) {
-		console.log("leave: s" + index + " --- " + count++)
+		// console.log("leave: s" + index + " --- " + count++)
 		document.getElementById("s" + index).style.visibility = "hidden"
 	}
 
@@ -149,5 +148,20 @@ app.controller('BlogController', ['$scope', '$http', '$window', function($scope,
 	
 	$scope.delete = function(section, index) {
 		$scope.entries[section].splice(index, 1)
+	}
+
+	$scope.download = function() {
+		let outputString = ""
+		$scope.entries.forEach((arr, index) => {
+			console.log(arr)
+			outputString += "Section " + (index + 1) + " notes\n"
+			arr.forEach(note => {
+				outputString += "\t" + note + "\n"
+			})
+		})
+
+		document.getElementById("dowload-notes").href = 'data:text/plain;charset=utf-8,'
+          + encodeURIComponent(outputString);
+        document.getElementById("dowload-notes").click()
 	}
 }])
