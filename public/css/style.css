@@ -148,6 +148,7 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 15%;
   left: 84%;
   margin-right: 20px;
+  width: 248px;
 }
 
 .comment-s1 {
@@ -165,6 +166,7 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 21.5%;
   left: 84%;
   margin-right: 20px;
+  width: 248px;
 }
 
 
@@ -189,17 +191,24 @@ h1, h2, h3, h4, h5, h6, figure {
   left: 50%;
 }
 
+.arrow-s2 {
+  position: absolute;
+  top: -350%;
+  left: 50%;
+}
+
 .text-area-input-s2 {
   position: absolute;
   top: 35%;
   left: 84%;
   margin-right: 20px;
+  width: 248px;
 }
 
 
 .comment-s3 {
   position: absolute;
-  top: 47.5%;
+  top: 43.5%;
   left: 10%;
   width: 15%;
   height: 29%;
@@ -209,15 +218,16 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .text-area-input-s3 {
   position: absolute;
-  top: 60%;
+  top: 64%;
   left: 84%;
   margin-right: 20px;
+  width: 248px;
 }
 
 
 .comment-s4 {
   position: absolute;
-  top: 75%;
+  top: 71.5%;
   left: 10%;
   width: 15%;
   height: 14.5%;
@@ -230,6 +240,7 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 80%;
   left: 84%;
   margin-right: 20px;
+  width: 248px;
 }
 
 
