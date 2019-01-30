@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .comment-s0 {
   position: absolute;
   top: 13%;
-  left: 10%;
+  left: 3%;
   width: 15%;
   height: 7%;
   visibility: hidden;
@@ -149,12 +149,13 @@ h1, h2, h3, h4, h5, h6, figure {
   left: 84%;
   margin-right: 20px;
   width: 248px;
+  z-index: 1;
 }
 
 .comment-s1 {
   position: absolute;
   top: 20%;
-  left: 10%;
+  left: 3%;
   width: 15%;
   height: 6%;
   visibility: hidden;
@@ -167,13 +168,14 @@ h1, h2, h3, h4, h5, h6, figure {
   left: 84%;
   margin-right: 20px;
   width: 248px;
+  z-index: 1;
 }
 
 
 .comment-s2 {
   position: absolute;
   top: 26%;
-  left: 10%;
+  left: 3%;
   width: 15%;
   height: 21%;
   visibility: hidden;
@@ -203,13 +205,14 @@ h1, h2, h3, h4, h5, h6, figure {
   left: 84%;
   margin-right: 20px;
   width: 248px;
+  z-index: 1;
 }
 
 
 .comment-s3 {
   position: absolute;
   top: 43.5%;
-  left: 10%;
+  left: 3%;
   width: 15%;
   height: 29%;
   visibility: hidden;
@@ -222,13 +225,14 @@ h1, h2, h3, h4, h5, h6, figure {
   left: 84%;
   margin-right: 20px;
   width: 248px;
+  z-index: 1;
 }
 
 
 .comment-s4 {
   position: absolute;
   top: 71.5%;
-  left: 10%;
+  left: 3%;
   width: 15%;
   height: 14.5%;
   visibility: hidden;
@@ -241,6 +245,7 @@ h1, h2, h3, h4, h5, h6, figure {
   left: 84%;
   margin-right: 20px;
   width: 248px;
+  z-index: 1;
 }
 
 
